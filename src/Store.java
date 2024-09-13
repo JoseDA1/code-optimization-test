@@ -1,19 +1,41 @@
+import java.util.Scanner;
 public class Store {
+
     public static void main(String[] args) {
-        int p1 = 15;
-        int p2 = 10;
-        int p3 = 5;
+        //Inicializar scanner para que sea dinamico
+        Scanner scanner = new Scanner(System.in);
+        int GOODSALES = 50;
+        int price[] = new int[3];
+        int cant[] = new int[3];
+        int total[] = new int[3];
+        int totalSales = 0;
 
-        int total1 = p1 * 2;
-        int total2 = p2 * 3;
-        int total3 = p3 * 4;
+        //Pedir 3 valores enteros
+        System.out.println("Enter price of the products");
+        // Almacena en un array los precios con ayuda del for para evitar codigo repetitivo
+        for(int i=0; i<price.length; i++){
+            price[i] = scanner.nextInt();
+        }
 
-        int totalSales = total1 + total2 + total3;
+        //Pedir la cantidad
+        System.out.println("Enter the amounts");
+        // Almacena en un array las cantidades con ayuda del for para evitar codigo repetitivo
+        for(int i=0; i<cant.length; i++){
+            cant[i] = scanner.nextInt();
+        }
 
-        if (totalSales > 50) {
+        //Calcula los valores totales
+        for(int i=0; i<total.length; i++){
+            total[i] = (price[i] * cant[i]);
+            totalSales += total[i];
+        }
+        
+        //Imprime si fueron buenas ventas o no
+        if(totalSales > GOODSALES){
             System.out.println("Good sales performance");
-        } else {
+        }else{
             System.out.println("Low sales performance");
         }
+        System.out.println("Sales:" + totalSales); 
     }
 }
