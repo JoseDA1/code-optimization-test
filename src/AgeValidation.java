@@ -6,11 +6,13 @@ public class AgeValidation {
         final int AGE_LIMIT = 18;
         System.out.println("digits of your age");
         int age = scanner.nextInt();
+        if(age < 0){
+            System.out.println("Age non-existent");  
+        }
         
         if (age >= AGE_LIMIT) {
             System.out.println("Access granted");
         }else{
-
             System.out.println("Access denied");
         }
         

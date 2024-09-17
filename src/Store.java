@@ -5,27 +5,21 @@ public class Store {
         //Inicializar scanner para que sea dinamico
         Scanner scanner = new Scanner(System.in);
         int GOODSALES = 50;
-        int price[] = new int[3];
-        int cant[] = new int[3];
-        int total[] = new int[3];
+
+        System.out.println("Amount of products");
+        int amoutProducts = scanner.nextInt();
+        int price[] = new int[amoutProducts];
+        int cant[] = new int[amoutProducts];
+        int total[] = new int[amoutProducts];
         int totalSales = 0;
 
         //Pedir 3 valores enteros
-        System.out.println("Enter price of the products");
         // Almacena en un array los precios con ayuda del for para evitar codigo repetitivo
         for(int i=0; i<price.length; i++){
+            System.out.println("Enter price of the product");
             price[i] = scanner.nextInt();
-        }
-
-        //Pedir la cantidad
-        System.out.println("Enter the amounts");
-        // Almacena en un array las cantidades con ayuda del for para evitar codigo repetitivo
-        for(int i=0; i<cant.length; i++){
+            System.out.println("Enter the amount");
             cant[i] = scanner.nextInt();
-        }
-
-        //Calcula los valores totales
-        for(int i=0; i<total.length; i++){
             total[i] = (price[i] * cant[i]);
             totalSales += total[i];
         }
